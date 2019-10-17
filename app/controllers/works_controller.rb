@@ -14,8 +14,7 @@ class WorksController < ApplicationController
 
   # GET /works/1
   # GET /works/1.json
-  def show
-  end
+  def show; end
 
   # GET /works/new
   def new
