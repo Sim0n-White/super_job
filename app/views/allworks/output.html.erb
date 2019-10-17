@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Works</h1>
+<table>
+  <thead>
+  <tr>
+    <th>Strukt</th>
+    <th>Company</th>
+    <th>Name</th>
+    <th>Surname</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @works.each do |work| %>
+      <tr>
+        <td><%= work.strukt %></td>
+        <td><%= work.company %></td>
+        <td><%= work.name %></td>
+        <td><%= work.surname %></td>
+        <td><%= work.email %></td>
+        <td><%= work.phone %></td>
+        <td><%= link_to 'Show', work %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<br>
+
+<%= link_to 'Back',  root_path%>

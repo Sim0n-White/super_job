@@ -1,0 +1,5 @@
+<h1>Home page</h1>
+<% if current_user && current_user.typeof %>
+  <%= link_to 'Show yours works',  works_path%> <br/>
+<% end %>
+<%= link_to 'Show all works',  allworks_output_path%>
