@@ -1,3 +1,20 @@
+
+<script type="text/javascript">
+    $(document).ready(function(){
+
+        //Check if the current URL contains '#'
+        if(document.URL.indexOf("#")==-1)
+        {
+            // Set the URL to whatever it was plus "#".
+            url = document.URL+"#";
+            location = "#";
+
+            //Reload the page
+            location.reload(true);
+
+        }
+    });
+</script>
 <%= form_with(model: work, local: true) do |form| %>
   <% if work.errors.any? %>
     <div id="error_explanation">
@@ -53,7 +70,7 @@
 
   <div class="field">
     <%= form.label :countryid %>
-    <%= form.collection_select :countryid, Country.order(:coname), :id, :coname %>
+    <%= form.collection_select :countryid, Country.order(:coname), :id, :coname%>
   </div>
 
   <div class="field">
