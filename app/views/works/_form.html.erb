@@ -53,12 +53,12 @@
 
   <div class="field">
     <%= form.label :countryid %>
-    <%= form.number_field :countryid %>
+    <%= form.collection_select :countryid, Country.order(:coname), :id, :coname %>
   </div>
 
   <div class="field">
     <%= form.label :cityid %>
-    <%= form.number_field :cityid %>
+    <%= form.grouped_collection_select :cityid, Country.order(:coname), :cities, :coname, :id, :ciname  %>
   </div>
 
   <div class="field">

@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 
+gem 'barista'
+gem 'therubyracer', :require => nil
+
 gem 'devise'
 gem 'devise_roles'
 gem 'bootstrap-sass'

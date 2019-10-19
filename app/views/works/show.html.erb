@@ -42,17 +42,17 @@
 
 <p>
   <strong>Country:</strong>
-  <%= @work.countryid %>
+  <%= @result_co %>
 </p>
 
 <p>
   <strong>City:</strong>
-  <%= @work.cityid %>
+  <%= @result_ci%>
 </p>
 
 <p>
   <strong>Metro:</strong>
-  <%= @work.metroid %>
+  <%= @result_me %>
 </p>
 
 <p>
@@ -76,4 +76,4 @@
 <% if current_user && current_user.typeof && current_user.id == @work.userid %>
   <%= link_to 'Edit', edit_work_path(@work) %> |
 <% end %>
-<%= link_to 'Back', works_path %>
+<%= link_to t(:Back), request.referrer%>

@@ -12,9 +12,35 @@ class WorksController < ApplicationController
     end
   end
 
+  def citiesr
+    @citiesr = City.select('ciname')
+  end
   # GET /works/1
   # GET /works/1.json
-  def show; end
+  def show;
+    @result_co = Country.find_by_id @work.countryid
+
+    @result_ci = City.find_by_id @work.cityid
+
+    @result_me = Metro.find_by_id @work.metroid
+
+    if @result_co == nil
+      @result_co = "Not selected"
+      @result_ci = "Not selected"
+      @result_me = "Not selected"
+    elsif @result_ci == nil
+      @result_co = @result_co.coname
+      @result_ci = "Not selected"
+      @result_me = "Not selected"
+    elsif @result_me == nil
+      @result_ci = @result_ci.ciname
+      @result_me = "Not selected"
+    else
+      @result_co = @result_co.coname
+      @result_ci = @result_ci.ciname
+      @result_me = @result_me.mename
+    end
+  end
 
   # GET /works/new
   def new

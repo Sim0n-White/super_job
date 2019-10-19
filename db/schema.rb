@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_10_192032) do
+ActiveRecord::Schema.define(version: 2019_10_18_140230) do
 
   create_table "addinfos", force: :cascade do |t|
     t.text "needs"
@@ -23,6 +23,26 @@ ActiveRecord::Schema.define(version: 2019_10_10_192032) do
     t.integer "payment"
     t.string "valuta"
     t.integer "workid"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "cities", force: :cascade do |t|
+    t.integer "countryid"
+    t.string "ciname"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "countries", force: :cascade do |t|
+    t.string "coname"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "metros", force: :cascade do |t|
+    t.integer "cityid"
+    t.string "mename"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
