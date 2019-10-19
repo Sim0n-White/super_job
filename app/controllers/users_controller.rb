@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  def Index
+  def index
     @users = User.all
     if user_signed_in?
       redirect_to home_home_page_path
