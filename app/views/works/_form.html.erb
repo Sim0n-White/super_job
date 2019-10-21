@@ -59,6 +59,16 @@
   </div>
 
   <div class="field">
+    <%= form.label :profession %>
+    <%= form.collection_select :profession, Worklist.order(:woname), :id, :woname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :wtime %>
+    <%= form.collection_select :wtime, Timework.order(:id), :id, :wotime %>
+  </div>
+
+  <div class="field">
     <%= form.label :needs %>
     <%= form.text_area :needs %>
   </div>
@@ -70,17 +80,12 @@
 
   <div class="field">
     <%= form.label :countryid %>
-    <%= form.collection_select :countryid, Country.order(:coname), :id, :coname%>
+    <%= form.collection_select :countryid, Country.order(:id), :id, :coname %>
   </div>
 
   <div class="field">
     <%= form.label :cityid %>
-    <%= form.grouped_collection_select :cityid, Country.order(:coname), :cities, :coname, :id, :ciname  %>
-  </div>
-
-  <div class="field">
-    <%= form.label :metroid %>
-    <%= form.number_field :metroid %>
+    <%= form.grouped_collection_select :cityid, Country.order(:coname), :cities, :coname, :id, :ciname %>
   </div>
 
   <div class="field">

@@ -1,2 +1,0 @@
-class Metro < ApplicationRecord
-end

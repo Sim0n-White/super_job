@@ -18,27 +18,30 @@ class WorksController < ApplicationController
   # GET /works/1
   # GET /works/1.json
   def show;
+    @result_worklist = Worklist.find_by_id @work.profession
+    @result_timework = Timework.find_by_id @work.wtime
+    if @result_worklist == nil
+      @result_worklist = "Not selected"
+      @result_timework = "Not selected"
+    elsif @result_timework == nil
+      @result_worklist = @result_worklist.woname
+      @result_timework = "Not selected"
+    else
+      @result_worklist = @result_worklist.woname
+      @result_timework = @result_timework.wotime
+    end
+
     @result_co = Country.find_by_id @work.countryid
-
     @result_ci = City.find_by_id @work.cityid
-
-    @result_me = Metro.find_by_id @work.metroid
-
     if @result_co == nil
       @result_co = "Not selected"
       @result_ci = "Not selected"
-      @result_me = "Not selected"
     elsif @result_ci == nil
       @result_co = @result_co.coname
       @result_ci = "Not selected"
-      @result_me = "Not selected"
-    elsif @result_me == nil
-      @result_ci = @result_ci.ciname
-      @result_me = "Not selected"
     else
       @result_co = @result_co.coname
       @result_ci = @result_ci.ciname
-      @result_me = @result_me.mename
     end
   end
 
@@ -118,6 +121,6 @@ class WorksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def work_params
-      params.require(:work).permit(:strukt, :company, :name, :surname, :email, :phone, :userid, :needs, :cominfo, :countryid, :cityid, :metroid, :street, :house, :payment, :valuta)
+      params.require(:work).permit(:strukt, :company, :name, :surname, :email, :phone, :userid, :needs, :wtime, :profession, :cominfo, :countryid, :cityid, :street, :house, :payment, :valuta)
     end
 end
