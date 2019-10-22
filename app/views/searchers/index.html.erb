@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Searchers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Surname</th>
+      <th>Skills</th>
+      <th>Phone</th>
+      <th>Profession</th>
+      <th>Wtime</th>
+      <th>Country</th>
+      <th>City</th>
+      <th>Payment</th>
+      <th>Valuta</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @searchers.each do |searcher| %>
+      <% if current_user.id == searcher.user_id %>
+        <tr>
+          <td><%= searcher.name %></td>
+          <td><%= searcher.surname %></td>
+          <td><%= searcher.skills %></td>
+          <td><%= searcher.phone %></td>
+          <td><%= searcher.profession %></td>
+          <td><%= searcher.wtime %></td>
+          <td><%= Country.find(searcher.country_id).coname %></td>
+          <td><%= City.find(searcher.city_id).ciname %></td>
+          <td><%= searcher.payment %></td>
+          <td><%= searcher.valuta %></td>
+          <td><%= link_to 'Show', searcher %></td>
+          <td><%= link_to 'Edit', edit_searcher_path(searcher) %></td>
+          <td><%= link_to 'Destroy', searcher, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Searcher', new_searcher_path %>
+<%= link_to 'Back',  root_path%>

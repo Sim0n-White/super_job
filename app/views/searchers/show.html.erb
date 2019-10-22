@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @searcher.name %>
+</p>
+
+<p>
+  <strong>Surname:</strong>
+  <%= @searcher.surname %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @searcher.phone %>
+</p>
+
+<p>
+  <strong>Profession:</strong>
+  <%= @result_worklist %>
+</p>
+
+<p>
+  <strong>Skills:</strong>
+  <%= @searcher.skills %>
+</p>
+
+<p>
+  <strong>Experience:</strong>
+  <%= @result_ex %>
+</p>
+
+<p>
+  <strong>Wtime:</strong>
+  <%= @result_timework %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @result_co %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @result_ci %>
+</p>
+
+<p>
+  <strong>Payment:</strong>
+  <%= @searcher.payment %>
+</p>
+
+<p>
+  <strong>Valuta:</strong>
+  <%= @searcher.valuta %>
+</p>
+<% if current_user && current_user.typeof == false && current_user.id == @searcher.user_id %>
+  <%= link_to 'Edit', edit_searcher_path(@searcher) %> |
+<% end %>
+<%= link_to t(:Back), request.referrer%>
+

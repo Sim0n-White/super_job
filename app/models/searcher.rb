@@ -1,0 +1,2 @@
+class Searcher < ApplicationRecord
+end

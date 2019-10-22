@@ -19,15 +19,23 @@ class WorksController < ApplicationController
   # GET /works/1.json
   def show;
     @result_worklist = Worklist.find_by_id @work.profession
-    @result_timework = Timework.find_by_id @work.wtime
     if @result_worklist == nil
       @result_worklist = "Not selected"
-      @result_timework = "Not selected"
-    elsif @result_timework == nil
-      @result_worklist = @result_worklist.woname
-      @result_timework = "Not selected"
     else
       @result_worklist = @result_worklist.woname
+    end
+
+    @result_ex = Experience.find_by_id @work.experience
+    if @result_ex == nil
+      @result_ex = "Not selected"
+    else
+      @result_ex = @result_ex.exname
+    end
+
+    @result_timework = Timework.find_by_id @work.wtime
+    if @result_timework == nil
+      @result_timework = "Not selected"
+    else
       @result_timework = @result_timework.wotime
     end
 
@@ -121,6 +129,6 @@ class WorksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def work_params
-      params.require(:work).permit(:strukt, :company, :name, :surname, :email, :phone, :userid, :needs, :wtime, :profession, :cominfo, :countryid, :cityid, :street, :house, :payment, :valuta)
+      params.require(:work).permit(:strukt, :company, :name, :surname, :email, :phone, :userid, :needs, :experience, :wtime, :profession, :cominfo, :countryid, :cityid, :street, :house, :payment, :valuta)
     end
 end

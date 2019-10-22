@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_21_190800) do
+ActiveRecord::Schema.define(version: 2019_10_22_200517) do
 
   create_table "addinfos", force: :cascade do |t|
     t.text "needs"
@@ -40,11 +40,34 @@ ActiveRecord::Schema.define(version: 2019_10_21_190800) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "experiences", force: :cascade do |t|
+    t.string "exname"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "metros", force: :cascade do |t|
     t.integer "cityid"
     t.string "mename"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "searchers", force: :cascade do |t|
+    t.string "name"
+    t.string "surname"
+    t.text "skills"
+    t.integer "phone"
+    t.integer "profession"
+    t.integer "wtime"
+    t.integer "country_id"
+    t.integer "city_id"
+    t.integer "payment"
+    t.string "valuta"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "experience"
+    t.integer "user_id"
   end
 
   create_table "timeworks", force: :cascade do |t|
@@ -88,13 +111,13 @@ ActiveRecord::Schema.define(version: 2019_10_21_190800) do
     t.text "cominfo"
     t.integer "countryid"
     t.integer "cityid"
-    t.integer "metroid"
     t.string "street"
     t.string "house"
     t.integer "payment"
     t.string "valuta"
     t.integer "profession"
     t.integer "wtime"
+    t.integer "experience"
   end
 
 end

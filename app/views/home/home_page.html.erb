@@ -1,5 +1,10 @@
-<h1>Home page</h1>
+<h1>Welcome <%= current_user.email %></h1>
 <% if current_user && current_user.typeof %>
-  <%= link_to 'Show yours works',  works_path%> <br/>
+  <%= link_to 'New Work', new_work_path %> <br/>
+  <%= link_to 'Show your works',  works_path %> <br/>
+<% elsif current_user && !current_user.typeof %>
+  <%= link_to 'New Searcher', new_searcher_path %> <br/>
+  <%= link_to 'Show your Job vacancys',  searchers_path %> <br/>
 <% end %>
-<%= link_to 'Show all works',  allworks_output_path%>
+<%= link_to 'Show all searches',  allsearches_output_path %><br/>
+<%= link_to 'Show all works',  allworks_output_path %><br/>

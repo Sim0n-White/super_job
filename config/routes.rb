@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'allsearches/output'
+  resources :searchers
   get 'home/home_page'
   get 'allworks/output'
   resources :works

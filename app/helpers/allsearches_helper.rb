@@ -1,0 +1,2 @@
+module AllsearchesHelper
+end

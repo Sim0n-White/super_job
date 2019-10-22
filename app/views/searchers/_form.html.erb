@@ -1,42 +1,29 @@
-
 <script type="text/javascript">
     $(document).ready(function(){
-
         //Check if the current URL contains '#'
         if(document.URL.indexOf("#")==-1)
         {
             // Set the URL to whatever it was plus "#".
             url = document.URL+"#";
             location = "#";
-
             //Reload the page
             location.reload(true);
-
         }
     });
 </script>
-<%= form_with(model: work, local: true) do |form| %>
-  <% if work.errors.any? %>
+
+<%= form_with(model: searcher, local: true) do |form| %>
+  <% if searcher.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(work.errors.count, "error") %> prohibited this work from being saved:</h2>
+      <h2><%= pluralize(searcher.errors.count, "error") %> prohibited this searcher from being saved:</h2>
 
       <ul>
-        <% work.errors.full_messages.each do |message| %>
+        <% searcher.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :strukt %>
-    <%= form.text_field :strukt %>
-  </div>
-
-  <div class="field">
-    <%= form.label :company %>
-    <%= form.text_field :company %>
-  </div>
 
   <div class="field">
     <%= form.label :name %>
@@ -46,11 +33,6 @@
   <div class="field">
     <%= form.label :surname %>
     <%= form.text_field :surname %>
-  </div>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
   </div>
 
   <div class="field">
@@ -69,38 +51,23 @@
   </div>
 
   <div class="field">
+    <%= form.label :skills %>
+    <%= form.text_area :skills %>
+  </div>
+
+  <div class="field">
     <%= form.label :wtime %>
     <%= form.collection_select :wtime, Timework.order(:id), :id, :wotime %>
   </div>
 
   <div class="field">
-    <%= form.label :needs %>
-    <%= form.text_area :needs %>
+    <%= form.label :country_id %>
+    <%= form.collection_select :country_id, Country.order(:id), :id, :coname %>
   </div>
 
   <div class="field">
-    <%= form.label :cominfo %>
-    <%= form.text_area :cominfo %>
-  </div>
-
-  <div class="field">
-    <%= form.label :countryid %>
-    <%= form.collection_select :countryid, Country.order(:id), :id, :coname %>
-  </div>
-
-  <div class="field">
-    <%= form.label :cityid %>
-    <%= form.grouped_collection_select :cityid, Country.order(:coname), :cities, :coname, :id, :ciname %>
-  </div>
-
-  <div class="field">
-    <%= form.label :street %>
-    <%= form.text_field :street %>
-  </div>
-
-  <div class="field">
-    <%= form.label :house %>
-    <%= form.text_field :house %>
+    <%= form.label :city_id %>
+    <%= form.grouped_collection_select :city_id, Country.order(:coname), :cities, :coname, :id, :ciname %>
   </div>
 
   <div class="field">
@@ -114,7 +81,7 @@
   </div>
 
   <div class="field">
-    <%= form.hidden_field :userid, value: current_user.id, :readonly => true %>
+    <%= form.hidden_field :user_id, value: current_user.id, :readonly => true %>
   </div>
 
   <div class="actions">
