@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'work_search/input'
+  get 'work_search/output'
   get 'allsearches/output'
   resources :searchers
   get 'home/home_page'
@@ -11,6 +13,7 @@ Rails.application.routes.draw do
   resources :users
   resources :countries
   resources :cities
+  resources :works_searches
   root 'users#index'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

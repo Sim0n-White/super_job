@@ -1,0 +1,59 @@
+<script type="text/javascript">
+    $(document).ready(function(){
+
+        //Check if the current URL contains '#'
+        if(document.URL.indexOf("#")==-1)
+        {
+            // Set the URL to whatever it was plus "#".
+            url = document.URL+"#";
+            location = "#";
+
+            //Reload the page
+            location.reload(true);
+
+        }
+    });
+</script>
+<h1>WorkSearch</h1>
+<div id="implicit__container">
+  <%= form_with id: 'implicit__form', method: :get, url: work_search_output_path do |form| %>
+    <div class="form-group">
+      <div class="field">
+        <%= form.label :countryido %>
+        <%= form.collection_select :countryido, Country.order(:id), :id, :coname %>
+      </div>
+
+      <div class="field">
+        <%= form.label :cityido %>
+        <%= form.grouped_collection_select :cityido, Country.order(:coname), :cities, :coname, :id, :ciname %>
+      </div>
+
+      <div class="field">
+        <%= form.label :company %>
+        <%= form.collection_select :company, Work.order(:id), :company, :company, :include_blank => true %>
+      </div>
+
+      <div class="field">
+        <%= form.label :profession %>
+        <%= form.collection_select :profession, Worklist.order(:woname), :id, :woname, :include_blank => true %>
+      </div>
+
+      <div class="field">
+        <%= form.label :experience %>
+        <%= form.collection_select :experience, Experience.order(:id), :id, :exname, :include_blank => true %>
+      </div>
+
+      <div class="field">
+        <%= form.label :wtime %>
+        <%= form.collection_select :wtime, Timework.order(:id), :id, :wotime, :include_blank => true %>
+      </div>
+
+      <div class="createspace">
+        <%= form.submit "Ok", class: 'btn btn-outline-light' %>
+      </div>
+    </div>
+  <% end %>
+  <div class="">
+    <p id="implicit__result"></p>
+  </div>
+</div>

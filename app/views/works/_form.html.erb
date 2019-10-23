@@ -60,7 +60,7 @@
 
   <div class="field">
     <%= form.label :profession %>
-    <%= form.collection_select :profession, Worklist.order(:woname), :id, :woname %>
+    <%= form.collection_select :profession, Worklist.order(:woname), :id, :woname, :include_blank => true%>
   </div>
 
   <div class="field">

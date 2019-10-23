@@ -1,25 +1,25 @@
 
 jQuery ->
-  loaded_model = $('#work_cityid :selected').text()
+  loaded_model = $('#cityido :selected').text()
   console.log(loaded_model)
   if loaded_model.length < 1
-    $('#work_cityid').parent().hide()
-  models = $('#work_cityid').html()
+    $('#cityido').parent().hide()
+  models = $('#cityido').html()
   console.log(models)
-  $('#work_countryid').change ->
-    make = $('#work_countryid :selected').text()
+  $('#countryido').change ->
+    make = $('#countryido :selected').text()
     console.log(make)
     escaped_make = make.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1')
     options = $(models).filter("optgroup[label='#{escaped_make}']").html()
     console.log(options)
     if options
-      $('#work_cityid').html(options)
-      $('#work_cityid').parent().show()
+      $('#cityido').html(options)
+      $('#cityido').parent().show()
     else
-      $('#work_cityid').empty()
-      $('work_cityid').parent().hide()
+      $('#cityido').empty()
+      $('#cityido').parent().hide()
 
-  $("#work_countryid").trigger "change"
+  $("#countryido").trigger "change"
 
  # metro_model = $('#work_metroid :selected').text()
  # console.log(metro_model)

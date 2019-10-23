@@ -6,6 +6,10 @@ ruby '2.6.3'
 gem 'barista'
 gem 'therubyracer', :require => nil
 
+gem 'uglifier', '>= 1.3.0'
+gem 'duktape'
+gem 'coffee-rails'
+
 gem 'devise'
 gem 'devise_roles'
 gem 'bootstrap-sass'

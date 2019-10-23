@@ -1,0 +1,57 @@
+document.querySelector('#implicit__result').innerHTML =
+    '<h1>Result(s)</h1>' +
+    '<table> '+
+      '<thead>' +
+        '<tr>' +
+          '<th>Country</th>' +
+          '<th>City</th>' +
+          '<th>Company</th>' +
+          '<th>Profession</th>' +
+          '<th>Experience</th>' +
+          '<th>Schedule</th>' +
+          '<th colspan="3"></th>' +
+        '</tr>' +
+      '</thead>' +
+
+      '<tbody>' +
+        '<% @result.each do |work| %>' +
+            '<tr>' +
+              '<% @result_co.each do |country| %>' +
+                '<% if country.id == work.countryid %>' +
+                  '<td><%= country.coname %></td>' +
+                  '<% break %>' +
+                '<% end %>' +
+              '<% end %>' +
+              '<% @result_ci.each do |city| %>' +
+                '<% if city.id == work.cityid %>' +
+                  '<td><%= city.ciname %></td>' +
+                  '<% break %>' +
+                '<% end %>' +
+              '<% end %>' +
+              '<td> <%= work.company %>' +
+              '<% @result_wl.each do |proff| %>' +
+                '<% if proff.id == work.profession %>' +
+                  '<td><%= proff.woname %></td>' +
+                  '<% break %>' +
+                '<% end %>' +
+              '<% end %>' +
+              '<% @result_ex.each do |exp| %>' +
+                '<% if exp.id == work.experience %>' +
+                  '<td><%= exp.exname %></td>' +
+                  '<% break %>' +
+                '<% end %>' +
+              '<% end %>' +
+              '<% @result_tw.each do |wtime| %>' +
+                '<% if wtime.id == work.wtime %>' +
+                  '<td><%= wtime.wotime %></td>' +
+                  '<% break %>' +
+                '<% end %>' +
+              '<% end %>' +
+              '<td><%= link_to 'Show', work %></td>' +
+            '</tr>' +
+        '<% end %>' +
+      '</tbody>' +
+    '</table>' +
+
+    '<br>'
+
