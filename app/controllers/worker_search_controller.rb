@@ -1,21 +1,20 @@
-class WorkSearchController < ApplicationController
+class WorkerSearchController < ApplicationController
   before_action :authenticate_user!
   def input
-    if current_user.typeof == true
+    if current_user.typeof == false
       redirect_to home_home_page_path
     end
   end
 
   def output
-    if current_user.typeof == false
+    if current_user.typeof == true
       @countryid = params[:countryido]
       @cityid = params[:cityido]
-      @company = params[:company]
       @profession = params[:profession]
       @experience = params[:experience]
       @wtime = params[:wtime]
 
-      @result = Work.all
+      @result = Searcher.all
       @result_co = Country.all
       @result_ci = City.all
       @result_ex = Experience.all
@@ -23,13 +22,10 @@ class WorkSearchController < ApplicationController
       @result_tw = Timework.all
 
       if (@countryid != nil && @countryid.present?)
-        @result = @result.where('countryid LIKE ?', @countryid)
+        @result = @result.where('country_id LIKE ?', @countryid)
       end
       if (@cityid != nil && @cityid.present?)
-        @result = @result.where('cityid LIKE ?', @cityid)
-      end
-      if (@company != nil && @company.present?)
-        @result = @result.where('company LIKE ?', @company)
+        @result = @result.where('city_id LIKE ?', @cityid)
       end
       if (@profession != nil && @profession.present?)
         @result = @result.where('profession LIKE ?', @profession)

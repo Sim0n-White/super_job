@@ -82,3 +82,63 @@ div {
 label {
   display: block;
 }
+
+.tablefix {
+  table-layout:fixed; width:1330px;
+}
+
+.correctplace{
+  margin: 0% 50% 60% -10%;
+}
+
+.btn-dark {
+  background-color: #666666;
+  color: white;
+}
+
+.btn-empty{
+  border: 2px solid black;
+  background-color: #666666;
+  color: black;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-empty-green{
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-outline-dark {
+  border-color: #666666;
+  color: white;
+}
+
+.btn-outline-dark:hover {
+  background-color: #BBBBBB;
+  color: black;
+}
+
+.success {
+  border-color: #4CAF50;
+  color: green;
+}
+
+.success:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.backcol{
+  margin: 1% 40% 0% 5%;
+  background-color: white;
+  border-radius: 15px;
+  border: 10px solid White;
+}
+
+

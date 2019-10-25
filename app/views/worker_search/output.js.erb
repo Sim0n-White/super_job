@@ -1,65 +1,66 @@
-document.querySelector('#implicit_result').innerHTML =
+document.querySelector('#implicit__result').innerHTML =
   '<% if @result != nil && @result.present? %>' +
     '<h1>Result(s)</h1>' +
-    '<table class="table table-striped table-dark> '+
+    '<table class="table table-striped table-dark"> '+
       '<thead>' +
         '<tr>' +
+          '<th>Name</th>' +
           '<th>Country</th>' +
           '<th>City</th>' +
-          '<th>Company</th>' +
           '<th>Profession</th>' +
           '<th>Experience</th>' +
           '<th>Schedule</th>' +
-          '<th>Payment</th>' +
+          '<th>Wanted payment</th>' +
           '<th>Valuta</th>' +
           '<th colspan="3"></th>' +
         '</tr>' +
-      '</thead>' +
+        '</thead>' +
 
-      '<tbody>' +
-        '<% @result.each do |work| %>' +
+        '<tbody>' +
+          '<% @result.each do |search| %>' +
             '<tr>' +
+              '<td><%= search.name %></td>' +
               '<% @result_co.each do |country| %>' +
-                '<% if country.id == work.countryid %>' +
+                '<% if country.id == search.country_id %>' +
                   '<td><%= country.coname %></td>' +
                   '<% break %>' +
                 '<% end %>' +
               '<% end %>' +
               '<% @result_ci.each do |city| %>' +
-                '<% if city.id == work.cityid %>' +
-                  '<td><%= city.ciname %></td>' +
+               '<% if city.id == search.city_id %>' +
+                 '<td><%= city.ciname %></td>' +
                   '<% break %>' +
                 '<% end %>' +
               '<% end %>' +
-              '<td> <%= work.company %>' +
               '<% @result_wl.each do |proff| %>' +
-                '<% if proff.id == work.profession %>' +
+                '<% if proff.id == search.profession %>' +
                   '<td><%= proff.woname %></td>' +
                   '<% break %>' +
-                '<% end %>' +
+               '<% end %>' +
               '<% end %>' +
               '<% @result_ex.each do |exp| %>' +
-                '<% if exp.id == work.experience %>' +
+                '<% if exp.id == search.experience %>' +
                   '<td><%= exp.exname %></td>' +
                   '<% break %>' +
                 '<% end %>' +
               '<% end %>' +
               '<% @result_tw.each do |wtime| %>' +
-                '<% if wtime.id == work.wtime %>' +
+                '<% if wtime.id == search.wtime %>' +
                   '<td><%= wtime.wotime %></td>' +
                   '<% break %>' +
                 '<% end %>' +
               '<% end %>' +
-              '<td> <%= work.payment %>' +
-              '<td> <%= work.valuta %>' +
-              '<td><%= link_to 'Show', work %></td>' +
-            '</tr>' +
+              '<td><%= search.payment %></td>' +
+              '<td><%= search.valuta %></td>' +
+            '<td><%= link_to 'Show', search %></td>' +
+          '</tr>' +
         '<% end %>' +
       '</tbody>' +
     '</table>' +
   '<% else %>' +
     '<h1> No result </h1>'+
   '<% end %>' +
+
 
     '<br>'
 

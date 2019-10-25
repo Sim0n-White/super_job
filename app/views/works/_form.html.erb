@@ -60,7 +60,7 @@
 
   <div class="field">
     <%= form.label :profession %>
-    <%= form.collection_select :profession, Worklist.order(:woname), :id, :woname, :include_blank => true%>
+    <%= form.collection_select :profession, Worklist.order(:woname), :id, :woname%>
   </div>
 
   <div class="field">
@@ -118,6 +118,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Create', class: "btn-empty-green success btn-lg" %>
   </div>
 <% end %>

@@ -1,12 +1,14 @@
 <h1>Welcome <%= current_user.email %></h1>
 <% if current_user && current_user.typeof %>
-  <%= link_to 'New Work', new_work_path %> <br/>
-  <%= link_to 'Show your works',  works_path %> <br/>
+  <%= button_to 'New Work', new_work_path, :method => "get", class: "btn-empty btn-outline-dark btn-lg btn-block" %> <br/>
+  <%= button_to 'Show your works',  works_path, :method => "get", class: "btn-empty btn-outline-dark btn-lg btn-block" %> <br/>
+  <%= button_to 'Search worker by specifics',  worker_search_input_path, :method => "get", class: "btn-empty btn-outline-dark btn-lg btn-block" %><br/>
 <% elsif current_user && !current_user.typeof %>
-  <%= link_to 'New Searcher', new_searcher_path %> <br/>
-  <%= link_to 'Show your Job vacancys',  searchers_path %> <br/>
+  <%= button_to 'New Searcher', new_searcher_path, :method => "get", class: "btn-empty btn-outline-dark btn-lg btn-block" %> <br/>
+  <%= button_to 'Show your Job vacancys',  searchers_path, :method => "get", class: "btn-empty btn-outline-dark btn-lg btn-block" %> <br/>
+  <%= button_to 'Search job by specifics',  work_search_input_path, :method => "get", class: "btn-empty btn-outline-dark btn-lg btn-block" %><br/>
 <% end %>
-<%= link_to 'Show all searches',  allsearches_output_path %><br/>
-<%= link_to 'Show all works',  allworks_output_path %><br/>
+<%= button_to 'Show all searches', allsearches_output_path, :method => "get", class: "btn-empty btn-outline-dark btn-lg btn-block" %><br/>
+<%= button_to 'Show all works',  allworks_output_path, :method => "get", class: "btn-empty btn-outline-dark btn-lg btn-block" %><br/>
 
-<%= link_to 'Search by specifics',  work_search_input_path %><br/>
+

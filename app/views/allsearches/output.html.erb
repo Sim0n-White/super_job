@@ -2,18 +2,16 @@
 
 <h1>All searchers</h1>
 
-<table>
+<table class="table table-striped table-dark">
   <thead>
   <tr>
     <th>Name</th>
     <th>Surname</th>
-    <th>Skills</th>
-    <th>Phone</th>
     <th>Profession</th>
-    <th>Wtime</th>
+    <th>Schedule</th>
     <th>Country</th>
     <th>City</th>
-    <th>Payment</th>
+    <th>Wanted payment</th>
     <th>Valuta</th>
     <th colspan="3"></th>
   </tr>
@@ -24,10 +22,8 @@
     <tr>
       <td><%= searcher.name %></td>
       <td><%= searcher.surname %></td>
-      <td><%= searcher.skills %></td>
-      <td><%= searcher.phone %></td>
-      <td><%= searcher.profession %></td>
-      <td><%= searcher.wtime %></td>
+      <td><%= Worklist.find(searcher.profession).woname %></td>
+      <td><%= Timework.find(searcher.wtime).wotime %></td>
       <td><%= Country.find(searcher.country_id).coname %></td>
       <td><%= City.find(searcher.city_id).ciname %></td>
       <td><%= searcher.payment %></td>
@@ -39,4 +35,4 @@
 </table>
 
 <br>
-<%= link_to 'Back',  root_path%>
+<%= link_to 'Back', root_path%>

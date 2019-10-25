@@ -1,91 +1,94 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Strukt:</strong>
-  <%= @work.strukt %>
-</p>
-
-<p>
-  <strong>Company:</strong>
-  <%= @work.company %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @work.name %>
-</p>
-
-<p>
-  <strong>Surname:</strong>
-  <%= @work.surname %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @work.email %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @work.phone %>
-</p>
-
-<p>
-  <strong>Work list:</strong>
-  <%= @result_worklist %>
-</p>
-
-<p>
-  <strong>Experience:</strong>
-  <%= @result_ex %>
-</p>
-
-<p>
-  <strong>Schedule:</strong>
-  <%= @result_timework %>
-</p>
+<div class="form-group backcol">
 
 
-<p>
-  <strong>Needs:</strong>
-  <%= @work.needs %>
-</p>
+<table class="table table-striped table-bordered table-dark">
+  <tr>
+    <th>Structure</th>
+    <td><%= @work.strukt %></td>
+  </tr>
 
-<p>
-  <strong>Company information:</strong>
-  <%= @work.cominfo %>
-</p>
+  <tr>
+    <th>Company</th>
+    <td><%= @work.company %></td>
+  </tr>
 
-<p>
-  <strong>Country:</strong>
-  <%= @result_co %>
-</p>
+  <tr>
+    <th>Name</th>
+    <td><%= @work.name %></td>
+  </tr>
 
-<p>
-  <strong>City:</strong>
-  <%= @result_ci%>
-</p>
+  <tr>
+    <th>Surname</th>
+    <td><%= @work.surname %></td>
+  </tr>
 
-<p>
-  <strong>Street:</strong>
-  <%= @work.street %>
-</p>
+  <tr>
+    <th>Email</th>
+    <td><%= @work.email %></td>
+  </tr>
 
-<p>
-  <strong>House:</strong>
-  <%= @work.house %>
-</p>
+  <tr>
+    <th>Phone</th>
+    <td><%= @work.phone %></td>
+  </tr>
 
-<p>
-  <strong>Payment:</strong>
-  <%= @work.payment %>
-</p>
+  <tr>
+    <th>Profession</th>
+    <td><%= @result_worklist %></td>
+  </tr>
 
-<p>
-  <strong>Valuta:</strong>
-  <%= @work.valuta %>
-</p>
-<% if current_user && current_user.typeof && current_user.id == @work.userid %>
-  <%= link_to 'Edit', edit_work_path(@work) %> |
-<% end %>
-<%= link_to t(:Back), request.referrer%>
+  <tr>
+    <th>Experience</th>
+    <td><%= @result_ex %></td>
+  </tr>
+
+  <tr>
+    <th>Schedule</th>
+    <td><%= @result_timework %></td>
+  </tr>
+
+  <tr>
+    <th>Needs</th>
+    <td><%= @work.needs %></td>
+  </tr>
+
+  <tr>
+    <th>Company information</th>
+    <td><%= @work.cominfo %></td>
+  </tr>
+
+  <tr>
+    <th>Country</th>
+    <td><%= @result_co %></td>
+  </tr>
+
+  <tr>
+    <th>City</th>
+    <td><%= @result_ci %></td>
+  </tr>
+
+  <tr>
+    <th>Street</th>
+    <td><%= @work.street %></td>
+  </tr>
+
+  <tr>
+    <th>House</th>
+    <td><%= @work.house %></td>
+  </tr>
+
+  <tr>
+    <th>Payment</th>
+    <td><%= @work.payment %></td>
+  </tr>
+
+  <tr>
+    <th>Valuta</th>
+    <td><%= @work.valuta %></td>
+  </tr>
+
+</table>
+  <%= link_to t(:Back), request.referrer%>
+</div>
+

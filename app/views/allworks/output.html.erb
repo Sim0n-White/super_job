@@ -1,15 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Works</h1>
-<table>
+<table class="table table-striped table-dark">
   <thead>
   <tr>
     <th>Strukt</th>
     <th>Company</th>
-    <th>Name</th>
-    <th>Surname</th>
-    <th>Email</th>
-    <th>Phone</th>
+    <th>Country</th>
+    <th>City</th>
+    <th>Searched profession</th>
+    <th>Experience</th>
+    <th>Payment</th>
+    <th>Valuta</th>
     <th colspan="3"></th>
   </tr>
   </thead>
@@ -19,10 +21,12 @@
       <tr>
         <td><%= work.strukt %></td>
         <td><%= work.company %></td>
-        <td><%= work.name %></td>
-        <td><%= work.surname %></td>
-        <td><%= work.email %></td>
-        <td><%= work.phone %></td>
+        <td><%= Country.find(work.countryid).coname %></td>
+        <td><%= City.find(work.cityid).ciname %></td>
+        <td><%= Worklist.find(work.profession).woname %></td>
+        <td><%= Experience.find(work.experience).exname %></td>
+        <td><%= work.payment %></td>
+        <td><%= work.valuta %></td>
         <td><%= link_to 'Show', work %></td>
       </tr>
     <% end %>
