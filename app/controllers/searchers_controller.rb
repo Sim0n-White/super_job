@@ -15,6 +15,10 @@ class SearchersController < ApplicationController
   # GET /searchers/1
   # GET /searchers/1.json
   def show
+    if current_user.id != @searcher.user_id && current_user.typeof == true
+      @searcher.update(activ: @searcher.activ + 1)
+    end
+
     @result_worklist = Worklist.find_by_id @searcher.profession
     if @result_worklist == nil
       @result_worklist = "Not selected"

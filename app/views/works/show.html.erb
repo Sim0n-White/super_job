@@ -89,6 +89,11 @@
   </tr>
 
 </table>
+
+  <% if current_user.id == @work.userid %>
+    <h>Activity: <%= @work.activ %></h> <br>
+  <% end %>
+
   <%= link_to t(:Back), request.referrer%>
 </div>
 

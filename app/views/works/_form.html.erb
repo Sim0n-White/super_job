@@ -29,7 +29,7 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :strukt %>
+    <%= form.label "Structure" %>
     <%= form.text_field :strukt %>
   </div>
 
@@ -69,7 +69,7 @@
   </div>
 
   <div class="field">
-    <%= form.label :wtime %>
+    <%= form.label "Schedule" %>
     <%= form.collection_select :wtime, Timework.order(:id), :id, :wotime %>
   </div>
 
@@ -79,17 +79,17 @@
   </div>
 
   <div class="field">
-    <%= form.label :cominfo %>
+    <%= form.label "Information about your company" %>
     <%= form.text_area :cominfo %>
   </div>
 
   <div class="field">
-    <%= form.label :countryid %>
+    <%= form.label "Country" %>
     <%= form.collection_select :countryid, Country.order(:id), :id, :coname %>
   </div>
 
   <div class="field">
-    <%= form.label :cityid %>
+    <%= form.label "City" %>
     <%= form.grouped_collection_select :cityid, Country.order(:coname), :cities, :coname, :id, :ciname %>
   </div>
 

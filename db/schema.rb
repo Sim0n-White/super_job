@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_22_200517) do
+ActiveRecord::Schema.define(version: 2019_11_03_175028) do
 
   create_table "addinfos", force: :cascade do |t|
     t.text "needs"
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 2019_10_22_200517) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "experience"
     t.integer "user_id"
+    t.integer "activ", default: 0
   end
 
   create_table "timeworks", force: :cascade do |t|
@@ -118,6 +119,7 @@ ActiveRecord::Schema.define(version: 2019_10_22_200517) do
     t.integer "profession"
     t.integer "wtime"
     t.integer "experience"
+    t.integer "activ", default: 0
   end
 
 end

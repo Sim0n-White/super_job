@@ -18,6 +18,10 @@ class WorksController < ApplicationController
   # GET /works/1
   # GET /works/1.json
   def show;
+    if current_user.id != @work.userid && current_user.typeof == false
+      @work.update(activ: @work.activ + 1)
+    end
+
     @result_worklist = Worklist.find_by_id @work.profession
     if @result_worklist == nil
       @result_worklist = "Not selected"
