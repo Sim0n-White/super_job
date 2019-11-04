@@ -15,8 +15,11 @@
         }
     });
 </script>
-<h1>New Work</h1>
+<workback>
+  <h1>New Work</h1>
+  <%= render 'form', work: @work %>
+</workback>
 
-<%= render 'form', work: @work %>
+
 
 <%= link_to 'Back', works_path %>

@@ -1,3 +1,60 @@
 // Place all the styles related to the Works controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.workback {
+  vertical-align: middle;
+  background-color: #eeeeee;
+  background-image: image-url('/assets/work.jpg');
+  background-size: 125%;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  padding-top: 30px;
+  max-width: 90%;
+  margin: 0 auto;
+  font-size: 20px;
+  margin-left: 5%;
+}
+
+.textfix {
+  width: 50%;
+  height: 25px;
+  font-size: 20px;
+  min-width: 190px;
+}
+
+.textfieldfix {
+  width: 50%;
+  height: 25px;
+  font-size: 20px;
+  min-width: 190px;
+  min-height: 100px
+}
+
+.trowfix {
+  width: 50%;
+  height: 25px;
+  font-size: 20px;
+  min-width: 190px;
+}
+
+.lettersize {
+  font-size: 20px;
+}
+
+.wmaincol{
+  color: #333;
+  font-size: 20px;
+}
+
+.workform {
+  padding-top: 30px;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+hmid2{
+  margin-left: 40%;
+  font-size: 50px;
+}
+
+

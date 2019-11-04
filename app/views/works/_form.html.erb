@@ -15,6 +15,8 @@
         }
     });
 </script>
+
+<body class="workback">
 <%= form_with(model: work, local: true) do |form| %>
   <% if work.errors.any? %>
     <div id="error_explanation">
@@ -30,32 +32,32 @@
 
   <div class="field">
     <%= form.label "Structure" %>
-    <%= form.text_field :strukt %>
+    <%= form.text_field :strukt, class: 'textfix' %>
   </div>
 
   <div class="field">
     <%= form.label :company %>
-    <%= form.text_field :company %>
+    <%= form.text_field :company, class: 'textfix' %>
   </div>
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: 'textfix' %>
   </div>
 
   <div class="field">
     <%= form.label :surname %>
-    <%= form.text_field :surname %>
+    <%= form.text_field :surname, class: 'textfix' %>
   </div>
 
   <div class="field">
     <%= form.label :email %>
-    <%= form.text_field :email %>
+    <%= form.text_field :email, class: 'textfix' %>
   </div>
 
   <div class="field">
     <%= form.label :phone %>
-    <%= form.number_field :phone %>
+    <%= form.number_field :phone, class: 'textfix' %>
   </div>
 
   <div class="field">
@@ -75,37 +77,37 @@
 
   <div class="field">
     <%= form.label :needs %>
-    <%= form.text_area :needs %>
+    <%= form.text_area :needs, class: 'textfieldfix' %>
   </div>
 
   <div class="field">
     <%= form.label "Information about your company" %>
-    <%= form.text_area :cominfo %>
+    <%= form.text_area :cominfo, class: 'textfieldfix' %>
   </div>
 
   <div class="field">
     <%= form.label "Country" %>
-    <%= form.collection_select :countryid, Country.order(:id), :id, :coname %>
+    <%= form.collection_select :countryid, Country.order(:id), :id, :coname, {:class => 'form-control'} %>
   </div>
 
   <div class="field">
     <%= form.label "City" %>
-    <%= form.grouped_collection_select :cityid, Country.order(:coname), :cities, :coname, :id, :ciname %>
+    <%= form.grouped_collection_select :cityid, Country.order(:coname), :cities, :coname, :id, :ciname, {class: 'browser-default custom-select'} %>
   </div>
 
   <div class="field">
     <%= form.label :street %>
-    <%= form.text_field :street %>
+    <%= form.text_field :street, class: 'textfix' %>
   </div>
 
   <div class="field">
     <%= form.label :house %>
-    <%= form.text_field :house %>
+    <%= form.text_field :house, class: 'textfix' %>
   </div>
 
   <div class="field">
     <%= form.label :payment %>
-    <%= form.number_field :payment %>
+    <%= form.number_field :payment, class: 'textfix' %>
   </div>
 
   <div class="field">
@@ -121,3 +123,5 @@
     <%= form.submit 'Create', class: "btn-empty-green success btn-lg" %>
   </div>
 <% end %>
+</body>
+

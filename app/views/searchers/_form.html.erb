@@ -12,6 +12,7 @@
     });
 </script>
 
+<body class="workback">
 <%= form_with(model: searcher, local: true) do |form| %>
   <% if searcher.errors.any? %>
     <div id="error_explanation">
@@ -27,17 +28,17 @@
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: 'textfix' %>
   </div>
 
   <div class="field">
     <%= form.label :surname %>
-    <%= form.text_field :surname %>
+    <%= form.text_field :surname, class: 'textfix' %>
   </div>
 
   <div class="field">
     <%= form.label :phone %>
-    <%= form.number_field :phone %>
+    <%= form.number_field :phone, class: 'textfix' %>
   </div>
 
   <div class="field">
@@ -52,7 +53,7 @@
 
   <div class="field">
     <%= form.label :skills %>
-    <%= form.text_area :skills %>
+    <%= form.text_area :skills, class: 'textfieldfix' %>
   </div>
 
   <div class="field">
@@ -72,12 +73,12 @@
 
   <div class="field">
     <%= form.label :payment %>
-    <%= form.number_field :payment %>
+    <%= form.number_field :payment, class: 'textfix' %>
   </div>
 
   <div class="field">
     <%= form.label :valuta %>
-    <%= form.text_field :valuta %>
+    <%= form.text_field :valuta, class: 'textfix' %>
   </div>
 
   <div class="field">
@@ -88,3 +89,4 @@
     <%= form.submit 'Create', class: "btn-empty-green success btn-lg" %>
   </div>
 <% end %>
+</body>

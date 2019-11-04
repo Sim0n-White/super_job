@@ -1,4 +1,7 @@
-<h1>Welcome <%= current_user.email %></h1>
+<body class="home">
+
+<hmid>Welcome <%= current_user.email %></hmid>
+<div class="homeform">
 <% if current_user && current_user.typeof %>
   <%= button_to 'New Work', new_work_path, :method => "get", class: "btn-empty btn-outline-dark btn-lg btn-block" %> <br/>
   <%= button_to 'Show your works',  works_path, :method => "get", class: "btn-empty btn-outline-dark btn-lg btn-block" %> <br/>
@@ -10,5 +13,6 @@
 <% end %>
 <%= button_to 'Show all searches', allsearches_output_path, :method => "get", class: "btn-empty btn-outline-dark btn-lg btn-block" %><br/>
 <%= button_to 'Show all works',  allworks_output_path, :method => "get", class: "btn-empty btn-outline-dark btn-lg btn-block" %><br/>
-
+</div>
+</body>
 

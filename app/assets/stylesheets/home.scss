@@ -1,3 +1,27 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.home{
+  vertical-align: middle;
+  background-color: #eeeeee;
+  background-image: image-url('/assets/home.jpg');
+  background-size: 100%;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  padding-top: 30px;
+  max-width: 90%;
+  margin: 0 auto;
+  font-size: 20px;
+  margin-left: 5%;
+}
+
+.homeform {
+  padding-top: 30px;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+hmid{
+  margin-left: 32%;
+  font-size: 50px;
+}
