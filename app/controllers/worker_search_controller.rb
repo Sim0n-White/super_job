@@ -20,6 +20,7 @@ class WorkerSearchController < ApplicationController
       @result_ex = Experience.all
       @result_wl = Worklist.all
       @result_tw = Timework.all
+      @result_val = Valutum.all
 
       if (@countryid != nil && @countryid.present?)
         @result = @result.where('country_id LIKE ?', @countryid)

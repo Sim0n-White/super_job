@@ -1,0 +1,50 @@
+<body class="workback">
+<%= form_tag payment_output_path, method: :get do %>
+  <div class="field">
+    <%= label_tag :profession %>
+    <%= collection_select 'profession', :id, Worklist.order(:woname), :id, :woname %>
+  </div>
+  <div class="field">
+    <%= label_tag :experience %>
+    <%= collection_select 'experience', :id, Experience.order(:id), :id, :exname %>
+  </div>
+  <div class="field">
+    <label for="theme">Higher education:</label>
+    <br><%= radio_button_tag 'education', 1, checked: true %> Secondary education
+    <br><%= radio_button_tag 'education', 2 %> Secondary special education
+    <br><%= radio_button_tag 'education', 3 %> Incomplete higher education
+    <br><%= radio_button_tag 'education', 4 %> Higher education
+    <br><%= radio_button_tag 'education', 5 %> Several Higher educations
+  </div>
+
+  <div class="field">
+    <label for="theme">Professional sertificates:</label>
+    <br><%= radio_button_tag 'sertificares', 1, checked: true %> None
+    <br><%= radio_button_tag 'sertificares', 2 %> One
+    <br><%= radio_button_tag 'sertificares', 3 %> Several
+  </div>
+
+  <div class="field">
+    <label for="theme">Do you know any foreign languages?</label>
+    <br><%= radio_button_tag 'language', 1, checked: true %> No
+    <br><%= radio_button_tag 'language', 2 %> Yes
+    <br><%= radio_button_tag 'language', 3 %> Several
+  </div>
+
+  <div class="field">
+    <label for="theme">Do you have recomendations?</label>
+    <br><%= radio_button_tag 'recomendations', 1, checked: true %> No
+    <br><%= radio_button_tag 'recomendations', 2 %> Yes
+  </div>
+
+  <div class="field">
+    <label for="theme">The place you live in:</label>
+    <br><%= radio_button_tag 'place', 1, checked: true %> Capital
+    <br><%= radio_button_tag 'place', 2 %> City with more then million dwellers
+    <br><%= radio_button_tag 'place', 3 %> City from 500k to 1 million dwellers.
+    <br><%= radio_button_tag 'place', 4 %> City from 100k to 500k dwellers.
+    <br><%= radio_button_tag 'place', 5 %> City with up to 100k dwellers
+  </div>
+  <%= submit_tag "Search", name: nil %>
+<% end %>
+</body>

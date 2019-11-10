@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_03_175028) do
+ActiveRecord::Schema.define(version: 2019_11_10_121038) do
 
   create_table "addinfos", force: :cascade do |t|
     t.text "needs"
@@ -63,12 +63,12 @@ ActiveRecord::Schema.define(version: 2019_11_03_175028) do
     t.integer "country_id"
     t.integer "city_id"
     t.integer "payment"
-    t.string "valuta"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "experience"
     t.integer "user_id"
     t.integer "activ", default: 0
+    t.integer "value", default: 1
   end
 
   create_table "timeworks", force: :cascade do |t|
@@ -89,6 +89,12 @@ ActiveRecord::Schema.define(version: 2019_11_03_175028) do
     t.boolean "typeof"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "valuta", force: :cascade do |t|
+    t.string "valuena"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "worklists", force: :cascade do |t|
@@ -115,11 +121,11 @@ ActiveRecord::Schema.define(version: 2019_11_03_175028) do
     t.string "street"
     t.string "house"
     t.integer "payment"
-    t.string "valuta"
     t.integer "profession"
     t.integer "wtime"
     t.integer "experience"
     t.integer "activ", default: 0
+    t.integer "value"
   end
 
 end

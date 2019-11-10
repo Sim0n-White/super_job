@@ -51,7 +51,12 @@ document.querySelector('#implicit__result').innerHTML =
                 '<% end %>' +
               '<% end %>' +
               '<td><%= search.payment %></td>' +
-              '<td><%= search.valuta %></td>' +
+              '<% @result_val.each do |val| %>' +
+                '<% if val.id == search.value %>' +
+                  '<td><%= val.valuena %></td>' +
+                  '<% break %>' +
+                '<% end %>' +
+              '<% end %>' +
             '<td><%= link_to 'Show', search %></td>' +
           '</tr>' +
         '<% end %>' +

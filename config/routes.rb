@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'payment/input'
+  get 'payment/output'
   get 'worker_search/input'
   get 'worker_search/output'
   get 'work_search/input'
@@ -17,6 +19,7 @@ Rails.application.routes.draw do
   resources :cities
   resources :works_searches
   resources :worker_searches
+  resources :payments
   root 'users#index'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

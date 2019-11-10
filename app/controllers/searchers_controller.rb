@@ -40,6 +40,13 @@ class SearchersController < ApplicationController
       @result_timework = @result_timework.wotime
     end
 
+    @result_val = Valutum.find_by_id @searcher.value
+    if @result_val == nil
+      @result_val = "Not selected"
+    else
+      @result_val = @result_val.valuena
+    end
+
     @result_co = Country.find_by_id @searcher.country_id
     @result_ci = City.find_by_id @searcher.city_id
     if @result_co == nil
@@ -130,6 +137,6 @@ class SearchersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def searcher_params
-      params.require(:searcher).permit(:name, :surname, :skills, :phone, :experience, :user_id, :profession, :wtime, :country_id, :city_id, :payment, :valuta)
+      params.require(:searcher).permit(:name, :surname, :skills, :phone, :experience, :user_id, :profession, :wtime, :country_id, :city_id, :payment, :value)
     end
 end

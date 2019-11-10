@@ -1,10 +1,10 @@
 document.querySelector('#implicit_result').innerHTML =
   '<% if @result != nil && @result.present? %>' +
     '<h1>Result(s)</h1>' +
-    '<table class="table table-striped table-dark> '+
+    '<table class="table table-striped table-dark wmaincol">' +
       '<thead>' +
         '<tr>' +
-          '<th>Country</th>' +
+          '<td>Country</th>' +
           '<th>City</th>' +
           '<th>Company</th>' +
           '<th>Profession</th>' +
@@ -51,7 +51,12 @@ document.querySelector('#implicit_result').innerHTML =
                 '<% end %>' +
               '<% end %>' +
               '<td> <%= work.payment %>' +
-              '<td> <%= work.valuta %>' +
+              '<% @result_val.each do |val| %>' +
+                '<% if val.id == work.value %>' +
+                  '<td><%= val.valuena %></td>' +
+                  '<% break %>' +
+                '<% end %>' +
+              '<% end %>' +
               '<td><%= link_to 'Show', work %></td>' +
             '</tr>' +
         '<% end %>' +

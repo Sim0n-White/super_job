@@ -111,8 +111,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :valuta %>
-    <%= form.text_field :valuta %>
+    <%= form.label 'Value' %>
+    <%= form.collection_select :value, Valutum.order(:valuena), :id, :valuena%>
   </div>
 
   <div class="field">

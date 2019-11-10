@@ -26,7 +26,7 @@
         <td class="wmaincol"><%= Worklist.find(work.profession).woname %></td>
         <td class="wmaincol"><%= Experience.find(work.experience).exname %></td>
         <td class="wmaincol"><%= work.payment %></td>
-        <td class="wmaincol"><%= work.valuta %></td>
+        <td class="wmaincol"><%= Valutum.find(work.value).valuena %></td>
         <td class="wmaincol"><%= link_to 'Show', work %></td>
       </tr>
     <% end %>

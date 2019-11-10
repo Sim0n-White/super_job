@@ -77,8 +77,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :valuta %>
-    <%= form.text_field :valuta, class: 'textfix' %>
+    <%= form.label 'Value' %>
+    <%= form.collection_select :value, Valutum.order(:id), :id, :valuena%>
   </div>
 
   <div class="field">

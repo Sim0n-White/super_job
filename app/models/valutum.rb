@@ -1,0 +1,2 @@
+class Valutum < ApplicationRecord
+end

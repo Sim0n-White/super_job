@@ -30,7 +30,7 @@
           <td><%= Country.find(searcher.country_id).coname %></td>
           <td><%= City.find(searcher.city_id).ciname %></td>
           <td><%= searcher.payment %></td>
-          <td><%= searcher.valuta %></td>
+          <td><%= Valutum.find(searcher.value).valuena %></td>
           <td><%= link_to 'Show', searcher %></td>
           <td><%= link_to 'Edit', edit_searcher_path(searcher) %></td>
           <td><%= link_to 'Destroy', searcher, method: :delete, data: { confirm: 'Are you sure?' } %></td>

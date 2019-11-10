@@ -27,7 +27,7 @@
       <td class="wmaincol"><%= Country.find(searcher.country_id).coname %></td>
       <td class="wmaincol"><%= City.find(searcher.city_id).ciname %></td>
       <td class="wmaincol"><%= searcher.payment %></td>
-      <td class="wmaincol"><%= searcher.valuta %></td>
+      <td class="wmaincol"><%= Valutum.find(searcher.value).valuena %></td>
       <td class="wmaincol"><%= link_to 'Show', searcher %></td>
     </tr>
   <% end %>
